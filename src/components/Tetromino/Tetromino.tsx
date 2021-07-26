@@ -18,16 +18,16 @@ export interface TetrominoState {
 export default class Tetromino extends React.PureComponent<TetrominoProps, TetrominoState> {
 
   private static readonly COLORS = [
-    '#f94144ff',
-    '#f3722cff',
-    '#f8961eff',
-    '#f9844aff',
-    '#f9c74fff',
-    '#90be6dff',
-    '#43aa8bff',
-    '#4d908eff',
-    '#577590ff',
-    '#277da1ff',
+    "#54478c",
+    "#2c699a",
+    "#048ba8",
+    "#0db39e",
+    "#16db93",
+    "#83e377",
+    "#b9e769",
+    "#efea5a",
+    "#f1c453",
+    "#f29e4c"
   ];
 
   private static readonly BLOCK_SIZE_PIXELS = 30;
