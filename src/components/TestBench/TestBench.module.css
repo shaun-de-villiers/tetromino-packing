@@ -1,0 +1,44 @@
+.component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.addRandomButton {
+    width: 150px;
+    cursor: pointer;
+}
+
+.resetButton {
+    cursor: pointer;
+}
+
+.illegalPlacementPrompt {
+    color: red;
+    user-select: none;
+    width: 150px;
+}
+
+.counter {
+    font-size: 24px;
+    font-weight: bold;
+    color: grey;
+}
+
+.board {
+    background-size: 30px 30px;
+    background-image:
+            linear-gradient(to right, #c9c9c9 1px, transparent 1px),
+            linear-gradient(to bottom, #c9c9c9 1px, transparent 1px);
+    outline: #c9c9c9 solid 2px;
+    margin: 6px;
+}

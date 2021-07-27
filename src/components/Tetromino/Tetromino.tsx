@@ -1,14 +1,15 @@
 import * as React from 'react';
 import {TetrominoShape} from "../../types/TetrominoShape";
 import styles from './Tetromino.module.css';
-import {getBlocksInShape, randomInteger} from "../../packing-logic/HelperFunctions";
 import Position from "../../types/Position";
 import {Rotation} from "../../types/Rotation";
+import {getBlocksInShape, randomInteger} from "../../HelperFunctions";
 
 export interface TetrominoProps {
   shape: TetrominoShape;
   position: Position;
   rotation: Rotation;
+  isIllegal: boolean;
 }
 
 export interface TetrominoState {
@@ -49,8 +50,8 @@ export default class Tetromino extends React.PureComponent<TetrominoProps, Tetro
         <div
             className={styles.shape}
             style={{
-              top: this.props.position.x * Tetromino.BLOCK_SIZE_PIXELS,
-              left: this.props.position.y * Tetromino.BLOCK_SIZE_PIXELS
+              left: this.props.position.x * Tetromino.BLOCK_SIZE_PIXELS,
+              top: this.props.position.y * Tetromino.BLOCK_SIZE_PIXELS
             }}
         >
           {getBlocksInShape(this.props.shape, this.props.rotation)
@@ -59,7 +60,7 @@ export default class Tetromino extends React.PureComponent<TetrominoProps, Tetro
                       key={index}
                       className={styles.block}
                       style={{
-                        background: this.state.color,
+                        background: this.props.isIllegal ? '#FF0000' : this.state.color,
                         left: block.x * Tetromino.BLOCK_SIZE_PIXELS,
                         top: block.y * Tetromino.BLOCK_SIZE_PIXELS,
                         width: Tetromino.BLOCK_SIZE_PIXELS,

@@ -1,6 +1,6 @@
-import Position from "../types/Position";
-import {TetrominoShape} from "../types/TetrominoShape";
-import {Rotation} from "../types/Rotation";
+import {TetrominoShape} from "./types/TetrominoShape";
+import Position from "./types/Position";
+import {Rotation} from "./types/Rotation";
 
 export function randomInteger(max: number): number {
   const min = Math.ceil(0);
@@ -8,6 +8,7 @@ export function randomInteger(max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Returns the relative positions of the blocks in a tetromino
 export function getBlocksInShape(shape: TetrominoShape, rotation: Rotation): Position[] {
   switch (shape) {
     case TetrominoShape.O:

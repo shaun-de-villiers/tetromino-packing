@@ -1,9 +1,9 @@
 import React from 'react';
-import MainPage from "./pages/MainPage/MainPage";
+import TestBench from "./components/TestBench/TestBench";
 
 function App() {
   return (
-    <MainPage/>
+    <TestBench boardWidth={15} boardHeight={10}/>
   );
 }
 
